@@ -1,0 +1,38 @@
+@mixin button__auth($color) {
+  background-color: $color;
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem;
+  border: none;
+  color: $white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 400ms;
+  margin-bottom: 1rem;
+  box-shadow: 0px 10px 10px -6px darken($color: $color, $amount: 10);
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin button__auth-google($color) {
+  cursor: pointer;
+  margin-top: 5px;
+  width: 100%;
+  height: 42px;
+  background-color: $google-blue;
+  border-radius: 5px;
+  // box-shadow: 0px 10px 10px -6px darken($color: $color, $amount: 10);
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}

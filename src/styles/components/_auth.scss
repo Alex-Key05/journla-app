@@ -1,0 +1,114 @@
+.auth__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.auth__box-container {
+  text-align: center;
+  min-height: auto;
+  min-width: 300px;
+  background-color: $white;
+  box-shadow: 0px 3px $dark-grey;
+  border-radius: 2px;
+  padding: 1rem;
+}
+
+.auth__title {
+  color: darken($color: $primary, $amount: 20);
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__input {
+  flex: 1;
+  color: $dark-grey;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid $secundary;
+  transition: 300ms;
+  &:focus {
+    outline: none;
+    border: 2px solid darken($color: $tertiary, $amount: 10);
+  }
+}
+
+.auth__button {
+  @include button__auth($secundary);
+  &:disabled {
+    background-color: lighten($color: $secundary, $amount: 15);
+  }
+
+  &:hover {
+    background-color: darken($color: $secundary, $amount: 10);
+    cursor: pointer;
+  }
+}
+
+.auth__social {
+  display: flex;
+  flex-direction: column;
+  @include button__auth-google($google-blue);
+  transition: 400ms;
+
+  .google-btn {
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  &:hover {
+    background-color: darken($color: $google-blue, $amount: 10);
+  }
+
+  .google-icon-wrapper {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: $white;
+    border: 1px solid $secundary;
+  }
+  .google-icon {
+    margin-top: 11px;
+    margin-left: 0px;
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    text-align: center;
+    margin: 11px 40px 0 0;
+    color: $white;
+    font-size: 14px;
+  }
+}
+
+.auth__new-account {
+  @include button__auth($tertiary);
+  margin-top: 1rem;
+  color: $dark-grey;
+  text-decoration: none;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  &:hover {
+    background-color: darken($color: $tertiary, $amount: 10);
+  }
+}
+
+.auth__alert-error {
+  background-color: red;
+  border-radius: 5px;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 5px;
+}
